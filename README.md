@@ -2,43 +2,38 @@
 
 ===========++++=====functions.php =====++++===========
 <?php
-/**
- * Custom Post Type
- */
+    /**
+    * Template Name: Event Template
+    */
 
-if( !function_exists('my_custom_post_types'));
+get_header(); ?>
 
-// Our custom post type function
-function my_custom_post_types() {
+<div id="primary" class="content-area-events">
+	<main id="main" class="site-main" role="main">
+		<h1>All the Events Below:</h1>
 
-	register_post_type( 'events',
-		// CPT Options
-		array(
-			'labels' => array(
-				'name' => __( 'Events' ),
-				'singular_name' => __( 'Event' ),
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'events'),
-			'query_var' => true,
-			'capability_type' => 'post',
-			'supports' => array(
-				'title',
-				'custom-fields',
-				'comments',
-				'revisions',
-				'thumbnail',
-				'author',
-				'page-attributes',)
-		)
-	);
-}
-/**
- * Hooking up custom post function to theme setup
- */
-add_action( 'init', 'my_custom_post_types' );
-?>
+		<?php
+
+		$args = array('post_type' => 'events', 'posts_per_page' => 9);
+		$loop = new WP_Query($args);
+
+		// Start the loop.
+		while ( $loop->have_posts() ) : $loop->the_post();
+
+			// Include the page content template.
+			get_template_part( 'template-parts/content-events', get_post_format() );
+
+			// End of the loop.
+		endwhile;
+		?>
+
+	</main><!-- .site-main -->
+
+	<?php get_sidebar( 'content-bottom' ); ?>
+
+</div><!-- .content-area -->
+
+<?php get_footer(); ?>
 
 ===========++++===== content-events-template.php =====++++===========
 
@@ -107,4 +102,3 @@ get_header(); ?>
 
 </div>
 <!-- #post-## -->
-?>
