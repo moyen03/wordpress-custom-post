@@ -1,4 +1,4 @@
-# wordpress-custom-post
+# wordpress-custom-post functions code and the related template.
 
 ===========++++=====functions.php =====++++===========
 <?php
@@ -107,7 +107,3 @@ get_header(); ?>
 
 </div>
 <!-- #post-## -->
-
-===========++++===== =====++++===========
-===========++++===== =====++++===========
-
