@@ -1,6 +1,6 @@
 # wordpress-custom-post functions code and the related template.
 
-===========++++=====functions.php =====++++===========
+===========++++=====code for functions.php =====++++===========
 <?php
     /**
     * Template Name: Event Template
@@ -35,7 +35,7 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
-===========++++===== content-events-template.php =====++++===========
+===========++++=====code for content-events-template.php =====++++===========
 
 <?php
     /**
@@ -71,7 +71,7 @@ get_header(); ?>
 ?>
 <?php get_footer(); ?>
 
-===========++++===== content-events.php =====++++===========
+===========++++=====code for content-events.php =====++++===========
 <?php
 /**
  * The template part for displaying content for events
