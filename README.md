@@ -73,7 +73,7 @@ get_header(); ?>
 	<?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
-
+?>
 <?php get_footer(); ?>
 
 ===========++++===== content-events.php =====++++===========
@@ -107,3 +107,4 @@ get_header(); ?>
 
 </div>
 <!-- #post-## -->
+?>
